@@ -1,5 +1,3 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
@@ -7,10 +5,23 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ['"Poppins"', ...defaultTheme.fontFamily.sans],
+        roobert: ['"Roobert"', "sans-serif"],
+        inter: ['"Inter"', '"Roobert"', "sans-serif"],
       },
       screens: {
         laptop: { max: "1440px" },
+      },
+      colors: {
+        "navbar-bg": "var(--navbar-bg)",
+        "base-bg": "var(--base-bg)",
+        "base-txt": "var(--base-txt)",
+        "base-border": "var(--base-border)",
+        purple: "var(--purple)",
+        opac: {
+          "005": "var(--opac-005)",
+          "01": "var(--opac-01)",
+          "015": "var(--opac-015)",
+        },
       },
     },
   },
