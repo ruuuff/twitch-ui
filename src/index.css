@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --navbar-bg: #fff;
+  --base-bg: #fff;
+  --base-txt: #0e0e10;
+  --base-border: rgba(0, 0, 0, 0.1);
+  --purple: #5c16c5;
+  --opac-005: rgba(0, 0, 0, 0.05);
+  --opac-01: rgba(0, 0, 0, 0.1);
+  --opac-015: rgba(0, 0, 0, 0.15);
+}
+
+:root.dark {
+  --navbar-bg: #18181b;
+  --base-bg: #18181b;
+  --base-txt: #efeff1;
+  --base-border: hsl(0deg, 0%, 100%, 0.1);
+  --purple: #bf94ff;
+  --opac-005: hsl(0deg, 0%, 100%, 0.15);
+  --opac-01: hsl(0deg, 0%, 100%, 0.2);
+  --opac-015: hsl(0deg, 0%, 100%, 0.25);
+}
+
+@font-face {
+  font-family: "Roobert";
+  src: url("../public/Roobert-SemiBold.woff2");
+}
