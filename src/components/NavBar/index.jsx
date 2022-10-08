@@ -1,4 +1,5 @@
 import NavLeft from "./NavLeft";
+import NavInput from "./NavInput";
 import NavRight from "./NavRight";
 
 function NavBar() {
@@ -8,7 +9,7 @@ function NavBar() {
       font-semibold text-lg leading-tight font-roobert shadow-md"
     >
       <NavLeft />
-      <div></div>
+      <NavInput />
       <NavRight />
     </div>
   );
