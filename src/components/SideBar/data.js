@@ -1,4 +1,4 @@
-const data = [
+const followedChannels = [
   {
     id: 1,
     user: "User 1",
@@ -73,4 +73,43 @@ const data = [
   },
 ];
 
-export default data;
+const recommendedChannels = [
+  {
+    id: 1,
+    user: "Recommended 1",
+    game: "Minecraft",
+    viewers: 1100,
+  },
+  {
+    id: 2,
+    user: "Recommended 2",
+    game: "Terraria",
+    viewers: 70,
+  },
+  {
+    id: 3,
+    user: "Recommended 3",
+    game: "VALORANT",
+    viewers: 4800,
+  },
+  {
+    id: 4,
+    user: "Recommended 4",
+    game: "Overwatch 2",
+    viewers: 19,
+  },
+  {
+    id: 5,
+    user: "Recommended 5",
+    game: "League of Legends",
+    viewers: 436,
+  },
+  {
+    id: 6,
+    user: "Recommended 6",
+    game: "Teamfight Tactics",
+    viewers: 248,
+  },
+];
+
+export { followedChannels, recommendedChannels };
