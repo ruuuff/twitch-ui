@@ -207,7 +207,6 @@ function UserDropdown() {
             version="1.1"
             viewBox="0 0 20 20"
             x="0px"
-            class="ScIconSVG-sc-1bgeryd-1 ifdSJl"
           >
             <g>
               <path d="M10 8a2 2 0 100 4 2 2 0 000-4z"></path>
