@@ -1,21 +1,21 @@
+import { useState } from "react";
 import DropdownDivider from "./DropdownDivider";
 import DropdownButton from "./DropdownButton";
-import { useState } from "react";
 
 function UserDropdown() {
   const theme = localStorage.getItem("theme");
-  const [darkOn, setDarkOn] = useState(theme === "dark");
+  const [darkTheme, setDarkTheme] = useState(theme === "dark");
 
   function toggleTheme() {
     const docEl = document.documentElement;
 
     if (docEl.classList.contains("dark")) {
       docEl.classList.remove("dark");
-      setDarkOn(false);
+      setDarkTheme(false);
       localStorage.setItem("theme", "light");
     } else {
       docEl.classList.add("dark");
-      setDarkOn(true);
+      setDarkTheme(true);
       localStorage.setItem("theme", "dark");
     }
   }
@@ -263,26 +263,22 @@ function UserDropdown() {
             Dark Theme
           </span>
           <div
-            className="ml-auto w-[35px] h-[20px] border-[2px] 
-            border-toggle-border rounded-full relative"
+            className="ml-auto w-[35px] h-[20px] border-[2px] border-toggle-border
+            rounded-full relative"
           >
-            {darkOn && (
+            {darkTheme && (
               <div
                 className="w-[6px] h-[10px] transform rotate-45 translate-y-[-50%] absolute
                 border-[2px] border-r-[rgb(169, 112, 255)] border-b-[rgb(169, 112, 255)]
-                border-t-[transparent] border-l-[transparent]"
-                style={{
-                  top: "40%",
-                  left: "5px",
-                }}
+                border-t-[transparent] border-l-[transparent] top-[40%] left-[5px]"
               ></div>
             )}
             <div
-              className="absolute w-[12px] h-[12px] bg-toggle-ball rounded-full transform translate-y-[-50%]"
+              className="absolute w-[12px] h-[12px] bg-toggle-ball rounded-full transform 
+              translate-y-[-50%] top-[50%] transition-[left] ease-linear 
+              motion-reduce:transition-none"
               style={{
-                top: "50%",
-                left: darkOn ? "calc(100% - (12px + 2px))" : "2px",
-                transition: "left 0.1s linear",
+                left: darkTheme ? "calc(100% - (12px + 2px))" : "2px",
               }}
             ></div>
           </div>
