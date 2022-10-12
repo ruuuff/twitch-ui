@@ -4,22 +4,24 @@ import NavButton from "../NavBar/NavButton";
 import Channel from "./Channel";
 
 function SideBar() {
-  const [openSideBar, setOpenSideBar] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
     <div
       className={`h-full bg-sidebar-bg overflow-y-scroll scrollbar ${
-        openSideBar ? "w-[240px]" : "w-[50px]"
+        isSidebarOpen ? "w-[240px]" : "w-[50px]"
       }`}
     >
       <div className="text-base-txt relative">
         <div
           className={`flex justify-center ${
-            openSideBar ? "absolute right-[10px] top-[10px] z-10" : "py-[10px]"
+            isSidebarOpen
+              ? "absolute right-[10px] top-[10px] z-10"
+              : "py-[10px]"
           }`}
         >
-          {openSideBar ? (
-            <NavButton onClick={() => setOpenSideBar(false)} sralt="Collapse">
+          {isSidebarOpen ? (
+            <NavButton onClick={() => setIsSidebarOpen(false)} sralt="Collapse">
               <svg
                 width="20px"
                 height="20px"
@@ -35,7 +37,7 @@ function SideBar() {
               </svg>
             </NavButton>
           ) : (
-            <NavButton onClick={() => setOpenSideBar(true)} sralt="Expand">
+            <NavButton onClick={() => setIsSidebarOpen(true)} sralt="Expand">
               <svg
                 width="20px"
                 height="20px"
@@ -55,7 +57,7 @@ function SideBar() {
       </div>
 
       <div className="followed channels flex flex-col">
-        {openSideBar && (
+        {isSidebarOpen && (
           <div className="text-base-txt py-[10px]">
             <p className="font-inter font-semibold uppercase text-[13px] px-[10px] pt-[3px]">
               Followed Channels
@@ -64,7 +66,7 @@ function SideBar() {
         )}
 
         {/* Heart SVG */}
-        {!openSideBar && (
+        {!isSidebarOpen && (
           <div className="py-[10px] text-alt-txt-color">
             <svg
               className="mx-auto"
@@ -90,10 +92,10 @@ function SideBar() {
         )}
 
         {followedChannels.map((channel, index) => (
-          <Channel key={index} channel={channel} expanded={openSideBar} />
+          <Channel key={index} channel={channel} expanded={isSidebarOpen} />
         ))}
 
-        {openSideBar && (
+        {isSidebarOpen && (
           <div className="py-[5px] px-[10px]">
             <button
               className="inline-block h-[22.3px] self-start font-inter text-[12px] 
@@ -107,7 +109,7 @@ function SideBar() {
 
       <div className="recommended channels">
         {/* Live SVG */}
-        {!openSideBar && (
+        {!isSidebarOpen && (
           <div className="py-[10px] text-alt-txt-color">
             <svg
               type="color-fill-current"
@@ -132,10 +134,10 @@ function SideBar() {
         )}
 
         {recommendedChannels.map((channel, index) => (
-          <Channel key={index} channel={channel} expanded={openSideBar} />
+          <Channel key={index} channel={channel} expanded={isSidebarOpen} />
         ))}
 
-        {openSideBar && (
+        {isSidebarOpen && (
           <div className="py-[5px] px-[10px]">
             <button
               className="inline-block h-[22.3px] self-start font-inter text-[12px] 
