@@ -23,7 +23,7 @@ function UserDropdown() {
   return (
     <div
       className="absolute p-[10px] ml-0 right-0 bg-base-bg rounded-md 
-      top-[46px] shadow-md w-[204.72px] laptop:w-[201.719px]"
+      top-[46px] shadow-md w-[204.72px] laptop:w-[201.719px] z-10"
     >
       <div className="flex items-center p-[5px]">
         <a
