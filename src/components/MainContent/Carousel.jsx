@@ -1,6 +1,18 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import CarouselBtn from "./CarouselBtn";
-const data = ["1", "2", "3", "4", "5", "6", "7", "8"];
+
+const data = [
+  { name: "alanzoka", game: "Scorn" },
+  { name: "frttt", game: "VALORANT" },
+  { name: "laribasgal", game: "Overwatch 2" },
+  { name: "Baiano", game: "League of Legends" },
+  { name: "Philza", game: "Just Chatting" },
+  { name: "YoDa", game: "League of Legends" },
+  { name: "Coreano", game: "Overwatch 2" },
+  { name: "TFToddy", game: "Teamfight Tactics" },
+  { name: "Felps", game: "Music" },
+  { name: "Bagi", game: "Just Chatting" },
+];
 
 function Carousel() {
   const [showItem, setShowItem] = useState(0);
@@ -14,55 +26,67 @@ function Carousel() {
     });
   }
 
+  const getStyle = useCallback(
+    (index) => {
+      // center
+      if (showItem === index) {
+        return "w-[530px] h-[300px] left-[50%] z-[8]";
+      }
+
+      const indexOfItem = showItems.indexOf(index);
+
+      // hidden
+      if (indexOfItem === 0 || indexOfItem === showItems.length - 1) {
+        const baseStyle = "w-[50px] h-[25px] z-[5] opacity-0";
+        return baseStyle + (indexOfItem === 0 ? " left-[10%]" : " left-[90%]");
+      }
+
+      // 3
+      if (indexOfItem === 1 || indexOfItem === showItems.length - 2) {
+        const baseStyle = "w-[200px] h-[100px] z-[6]";
+        return baseStyle + (indexOfItem === 1 ? " left-[20%]" : " left-[80%]");
+      }
+
+      // 2
+      if (indexOfItem === 2 || indexOfItem === showItems.length - 3) {
+        const baseStyle = "w-[400px] h-[200px] z-[7]";
+        return baseStyle + (indexOfItem === 2 ? " left-[35%]" : " left-[65%]");
+      }
+
+      return "h-[0px] w-[0px] left-[50%] opacity-0";
+    },
+    [showItem, showItems]
+  );
+
   useEffect(() => {
+    const refDataArray = data;
     const array = [];
+    const amounth = 3;
+    let negative = 0;
+    let positive = 0;
+
+    for (let i = 1; i <= amounth; i++) {
+      if (refDataArray[showItem - i] !== undefined) {
+        array.unshift(showItem - i);
+      } else {
+        array.unshift(refDataArray.length - (negative + 1));
+        negative++;
+      }
+    }
+
     array.push(showItem);
 
-    if (data[showItem - 1] === undefined) {
-      array.unshift(data.length - 1);
-    } else {
-      array.unshift(showItem - 1);
-    }
-
-    if (data[showItem - 2] === undefined) {
-      if (array.includes(data.length - 1)) {
-        array.unshift(data.length - 2);
+    for (let i = 1; i <= amounth; i++) {
+      if (showItem + i <= refDataArray.length - 1) {
+        array.push(showItem + i);
       } else {
-        array.unshift(data.length - 1);
+        array.push(positive);
+        positive++;
       }
-    } else {
-      array.unshift(showItem - 2);
-    }
-
-    if (data[showItem + 1] === undefined) {
-      array.push(0);
-    } else {
-      array.push(showItem + 1);
-    }
-
-    if (data[showItem + 2] === undefined) {
-      if (array.includes(0)) {
-        array.push(1);
-      } else {
-        array.push(0);
-      }
-    } else {
-      array.push(showItem + 2);
     }
 
     setShowItems(array);
   }, [showItem]);
-
-  function getStyle(id) {
-    if (showItem === id) {
-      return "w-[530px] h-[300px] bg-slate-500 left-[50%]";
-    }
-
-    return "hidden";
-  }
-
-  console.log(showItems);
-
   return (
     <div className="h-[300px] w-full relative">
       <CarouselBtn left onClick={() => updateShowCarouselItem(-1)}>
@@ -81,14 +105,18 @@ function Carousel() {
         </svg>
       </CarouselBtn>
 
-      {data.map((value, index) => {
+      {data.map(({ name, game }, index) => {
         return (
           <div
             key={index}
-            className={`flex items-center justify-center absolute top-[50%] 
-            transform translate-x-[-50%] translate-y-[-50%] ${getStyle(index)}`}
+            className={`flex items-start justify-start transform 
+            translate-x-[-50%] translate-y-[-50%] transition-[left,width,height,opacity]
+            ease-linear duration-500 absolute top-[50%] ${getStyle(index)}
+            bg-carousel-item-bg shadow-md text-base-txt`}
           >
-            {value}
+            {name}
+            <br />
+            {game}
           </div>
         );
       })}
