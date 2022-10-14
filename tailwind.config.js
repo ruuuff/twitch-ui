@@ -36,6 +36,7 @@ module.exports = {
         "carousel-btn-bg": "var(--carousel-btn-bg)",
         "carousel-btn-bg-hover": "var(--carousel-btn-bg-hover)",
         "carousel-btn-arrow": "var(--carousel-btn-arrow)",
+        "carousel-item-bg": "var(--carousel-item-bg)",
         title: "var(--title)",
         subtitle: "var(--subtitle)",
         "body-bg": "var(--body-bg)",

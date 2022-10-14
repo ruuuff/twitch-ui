@@ -32,6 +32,7 @@
   --carousel-btn-bg: #f7f7f8;
   --carousel-btn-bg-hover: rgba(0, 0, 0, 0.1);
   --carousel-btn-arrow: #0e0e10;
+  --carousel-item-bg: #fff;
   --title: #1f1f23;
   --subtitle: #53535f;
   --body-bg: #f7f7f8;
@@ -67,6 +68,7 @@
   --carousel-btn-bg: #0e0e10;
   --carousel-btn-bg-hover: hsl(0deg, 0%, 100%, 0.2);
   --carousel-btn-arrow: #efeff1;
+  --carousel-item-bg: #18181b;
   --title: #dedee3;
   --subtitle: #adadb8;
   --body-bg: #0e0e10;
