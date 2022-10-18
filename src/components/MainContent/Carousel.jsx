@@ -37,20 +37,20 @@ function Carousel() {
 
       // hidden
       if (indexOfItem === 0 || indexOfItem === showItems.length - 1) {
-        const baseStyle = "w-[50px] h-[25px] z-[5] opacity-0";
-        return baseStyle + (indexOfItem === 0 ? " left-[10%]" : " left-[90%]");
+        const baseStyle = "w-[300px] h-[169px] z-[5] opacity-0";
+        return baseStyle + (indexOfItem === 0 ? " left-[20%]" : " left-[80%]");
       }
 
       // 3
       if (indexOfItem === 1 || indexOfItem === showItems.length - 2) {
-        const baseStyle = "w-[200px] h-[100px] z-[6]";
-        return baseStyle + (indexOfItem === 1 ? " left-[20%]" : " left-[80%]");
+        const baseStyle = "w-[371px] h-[210px] z-[6]";
+        return baseStyle + (indexOfItem === 1 ? " left-[28%]" : " left-[72%]");
       }
 
       // 2
       if (indexOfItem === 2 || indexOfItem === showItems.length - 3) {
-        const baseStyle = "w-[400px] h-[200px] z-[7]";
-        return baseStyle + (indexOfItem === 2 ? " left-[35%]" : " left-[65%]");
+        const baseStyle = "w-[450px] h-[255px] z-[7]";
+        return baseStyle + (indexOfItem === 2 ? " left-[38%]" : " left-[62%]");
       }
 
       return "h-[0px] w-[0px] left-[50%] opacity-0";
@@ -91,8 +91,8 @@ function Carousel() {
     <div className="h-[300px] w-full relative">
       <CarouselBtn left onClick={() => updateShowCarouselItem(-1)}>
         <svg
-          width="20px"
-          height="20px"
+          width="24px"
+          height="24px"
           fill="currentColor"
           version="1.1"
           viewBox="0 0 20 20"
@@ -109,22 +109,30 @@ function Carousel() {
         return (
           <div
             key={index}
-            className={`flex items-start justify-start transform 
-            translate-x-[-50%] translate-y-[-50%] transition-[left,width,height,opacity]
-            ease-linear duration-500 absolute top-[50%] ${getStyle(index)}
-            bg-carousel-item-bg shadow-md text-base-txt`}
+            className={`transform translate-x-[-50%] translate-y-[-50%]
+            transition-[left,width,height,opacity] ease-linear duration-500
+            absolute top-[50%] shadow-md text-base-txt 
+            ${getStyle(index)}`}
           >
-            {name}
-            <br />
-            {game}
+            <div
+              className={`h-full w-full bg-carousel-item-bg transition-[transform]
+              ${
+                index !== showItem &&
+                "transform duration-300 hover:scale-[1.04]"
+              }`}
+            >
+              {name}
+              <br />
+              {game}
+            </div>
           </div>
         );
       })}
 
       <CarouselBtn right onClick={() => updateShowCarouselItem(1)}>
         <svg
-          width="20px"
-          height="20px"
+          width="24px"
+          height="24px"
           fill="currentColor"
           version="1.1"
           viewBox="0 0 20 20"
