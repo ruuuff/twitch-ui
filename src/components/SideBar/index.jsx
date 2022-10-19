@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { followedChannels, recommendedChannels } from "./data";
+import { followedChannels, recommendedChannels } from "../../data";
 import NavButton from "../NavBar/NavButton";
 import Channel from "./Channel";
 
