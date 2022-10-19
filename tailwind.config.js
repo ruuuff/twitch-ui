@@ -40,6 +40,7 @@ module.exports = {
         title: "var(--title)",
         subtitle: "var(--subtitle)",
         "body-bg": "var(--body-bg)",
+        "color-fill-live": "var(--color-fill-live)",
         purple: "var(--purple)",
         opac: {
           "005": "var(--opac-005)",
