@@ -1,25 +1,14 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { followedChannels } from "../../data";
 import CarouselBtn from "./CarouselBtn";
 
-const data = [
-  { name: "alanzoka", game: "Scorn" },
-  { name: "frttt", game: "VALORANT" },
-  { name: "laribasgal", game: "Overwatch 2" },
-  { name: "Baiano", game: "League of Legends" },
-  { name: "Philza", game: "Just Chatting" },
-  { name: "YoDa", game: "League of Legends" },
-  { name: "Coreano", game: "Overwatch 2" },
-  { name: "TFToddy", game: "Teamfight Tactics" },
-  { name: "Felps", game: "Music" },
-  { name: "Bagi", game: "Just Chatting" },
-];
-
 function Carousel() {
-  const [showItem, setShowItem] = useState(0);
+  const data = useMemo(() => followedChannels.slice(0, 10), []);
+  const [centralItem, setCentralItem] = useState(0);
   const [showItems, setShowItems] = useState([]);
 
-  function updateShowCarouselItem(value) {
-    setShowItem((current) => {
+  function updateCentralItem(value) {
+    setCentralItem((current) => {
       if (current + value < 0) return data.length - 1;
       else if (current + value >= data.length) return 0;
       return current + value;
@@ -29,7 +18,7 @@ function Carousel() {
   const getStyle = useCallback(
     (index) => {
       // center
-      if (showItem === index) {
+      if (centralItem === index) {
         return "w-[530px] h-[300px] left-[50%] z-[8]";
       }
 
@@ -37,7 +26,8 @@ function Carousel() {
 
       // hidden
       if (indexOfItem === 0 || indexOfItem === showItems.length - 1) {
-        const baseStyle = "w-[300px] h-[169px] z-[5] opacity-0";
+        const baseStyle =
+          "w-[300px] h-[169px] z-[5] opacity-0 pointer-events-none";
         return baseStyle + (indexOfItem === 0 ? " left-[20%]" : " left-[80%]");
       }
 
@@ -55,30 +45,29 @@ function Carousel() {
 
       return "h-[0px] w-[0px] left-[50%] opacity-0";
     },
-    [showItem, showItems]
+    [centralItem, showItems]
   );
 
   useEffect(() => {
-    const refDataArray = data;
     const array = [];
     const amounth = 3;
     let negative = 0;
     let positive = 0;
 
     for (let i = 1; i <= amounth; i++) {
-      if (refDataArray[showItem - i] !== undefined) {
-        array.unshift(showItem - i);
+      if (data[centralItem - i] !== undefined) {
+        array.unshift(centralItem - i);
       } else {
-        array.unshift(refDataArray.length - (negative + 1));
+        array.unshift(data.length - (negative + 1));
         negative++;
       }
     }
 
-    array.push(showItem);
+    array.push(centralItem);
 
     for (let i = 1; i <= amounth; i++) {
-      if (showItem + i <= refDataArray.length - 1) {
-        array.push(showItem + i);
+      if (centralItem + i <= data.length - 1) {
+        array.push(centralItem + i);
       } else {
         array.push(positive);
         positive++;
@@ -86,10 +75,10 @@ function Carousel() {
     }
 
     setShowItems(array);
-  }, [showItem]);
+  }, [centralItem, data]);
   return (
     <div className="h-[300px] w-full relative">
-      <CarouselBtn left onClick={() => updateShowCarouselItem(-1)}>
+      <CarouselBtn left onClick={() => updateCentralItem(-1)}>
         <svg
           width="24px"
           height="24px"
@@ -105,7 +94,8 @@ function Carousel() {
         </svg>
       </CarouselBtn>
 
-      {data.map(({ name, game }, index) => {
+      {data.map(({ user, game, title, viewers, tags }, index) => {
+        const isCentral = index === centralItem;
         return (
           <div
             key={index}
@@ -116,20 +106,25 @@ function Carousel() {
           >
             <div
               className={`h-full w-full bg-carousel-item-bg transition-[transform]
-              ${
-                index !== showItem &&
-                "transform duration-300 hover:scale-[1.04]"
-              }`}
+              ${!isCentral && "transform duration-300 hover:scale-[1.04]"}`}
+              onClick={() => !isCentral && setCentralItem(index)}
             >
-              {name}
-              <br />
-              {game}
+              <div className="relative w-full h-full">
+                {isCentral && (
+                  <div
+                    className="absolute top-[10px] left-[10px] bg-color-fill-live
+                    font-inter text-[13px] rounded-[4px] px-[5px] font-semibold"
+                  >
+                    LIVE
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         );
       })}
 
-      <CarouselBtn right onClick={() => updateShowCarouselItem(1)}>
+      <CarouselBtn right onClick={() => updateCentralItem(1)}>
         <svg
           width="24px"
           height="24px"

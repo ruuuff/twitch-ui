@@ -1,0 +1,133 @@
+const followedChannels = [
+  {
+    user: "Philza",
+    game: "Just Chatting",
+    title: "Just a simple title example...",
+    viewers: 11600,
+    tags: ["Tag 1", "Tag 2", "Tag 3", "Tag 4"],
+  },
+  {
+    user: "alanzoka",
+    game: "Scorn",
+    title: "Just a simple title example...",
+    viewers: 10920,
+    tags: ["Tag 1", "Tag 2", "Tag 3", "Tag 4"],
+  },
+  {
+    user: "YoDa",
+    game: "League of Legends",
+    title: "Just a simple title example...",
+    viewers: 7467,
+    tags: ["Tag 1", "Tag 2", "Tag 3", "Tag 4"],
+  },
+  {
+    user: "Baiano",
+    game: "League of Legends",
+    title: "Just a simple title example...",
+    viewers: 7430,
+    tags: ["Tag 1", "Tag 2", "Tag 3", "Tag 4"],
+  },
+  {
+    user: "frttt",
+    game: "VALORANT",
+    title: "Just a simple title example...",
+    viewers: 4300,
+    tags: ["Tag 1", "Tag 2", "Tag 3", "Tag 4"],
+  },
+  {
+    user: "Coreano",
+    game: "Overwatch 2",
+    title: "Just a simple title example...",
+    viewers: 3405,
+    tags: ["Tag 1", "Tag 2", "Tag 3", "Tag 4"],
+  },
+  {
+    user: "Felps",
+    game: "Music",
+    title: "Just a simple title example...",
+    viewers: 2231,
+    tags: ["Tag 1", "Tag 2", "Tag 3", "Tag 4"],
+  },
+  {
+    user: "TFToddy",
+    game: "Teamfight Tactics",
+    title: "Just a simple title example...",
+    viewers: 1879,
+    tags: ["Tag 1", "Tag 2", "Tag 3", "Tag 4"],
+  },
+  {
+    user: "nuuhfps",
+    game: "VALORANT",
+    title: "Just a simple title example...",
+    viewers: 643,
+    tags: ["Tag 1", "Tag 2", "Tag 3", "Tag 4"],
+  },
+  {
+    user: "laribasgal",
+    game: "Overwatch 2",
+    title: "Just a simple title example...",
+    viewers: 540,
+    tags: ["Tag 1", "Tag 2", "Tag 3", "Tag 4"],
+  },
+  {
+    user: "PatoPapao",
+    game: "League of Legends",
+    title: "Just a simple title example...",
+    viewers: 532,
+    tags: ["Tag 1", "Tag 2", "Tag 3", "Tag 4"],
+  },
+  {
+    user: "MrFalll",
+    game: "Raid: Shadow Legends",
+    title: "Just a simple title example...",
+    viewers: 174,
+    tags: ["Tag 1", "Tag 2", "Tag 3", "Tag 4"],
+  },
+];
+
+const recommendedChannels = [
+  {
+    user: "Recommended 1",
+    game: "Minecraft",
+    title: "Just a simple title example...",
+    viewers: 1100,
+    tags: ["Tag 1", "Tag 2", "Tag 3", "Tag 4"],
+  },
+  {
+    user: "Recommended 2",
+    title: "Just a simple title example...",
+    game: "Terraria",
+    viewers: 70,
+    tags: ["Tag 1", "Tag 2", "Tag 3", "Tag 4"],
+  },
+  {
+    user: "Recommended 3",
+    title: "Just a simple title example...",
+    game: "VALORANT",
+    viewers: 4800,
+    tags: ["Tag 1", "Tag 2", "Tag 3", "Tag 4"],
+  },
+  {
+    user: "Recommended 4",
+    title: "Just a simple title example...",
+    game: "Overwatch 2",
+    viewers: 19,
+    tags: ["Tag 1", "Tag 2", "Tag 3", "Tag 4"],
+  },
+  {
+    user: "Recommended 5",
+    game: "League of Legends",
+    title: "Just a simple title example...",
+    viewers: 436,
+    tags: ["Tag 1", "Tag 2", "Tag 3", "Tag 4"],
+  },
+  {
+    user: "Recommended 6",
+    game: "Teamfight Tactics",
+    title: "Just a simple title example...",
+    viewers: 248,
+    tags: ["Tag 1", "Tag 2", "Tag 3", "Tag 4"],
+  },
+];
+
+export { followedChannels, recommendedChannels };
