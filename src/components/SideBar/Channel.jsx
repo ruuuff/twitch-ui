@@ -1,5 +1,5 @@
 function Channel({ channel, expanded = false }) {
-  const { user, game, viewers } = channel;
+  const { user, game, viewers, avatar } = channel;
 
   return (
     <a
@@ -11,8 +11,11 @@ function Channel({ channel, expanded = false }) {
       <div>
         <img
           className="w-[30px] h-[30px] rounded-full"
-          src="https://static-cdn.jtvnw.net/user-default-pictures-uv/dbdc9198-def8-11e9-8681-784f43822e80-profile_image-70x70.png"
-          alt={`${user}`}
+          src={
+            avatar ||
+            "https://static-cdn.jtvnw.net/user-default-pictures-uv/dbdc9198-def8-11e9-8681-784f43822e80-profile_image-70x70.png"
+          }
+          alt={user}
         />
       </div>
 
@@ -36,7 +39,7 @@ function Channel({ channel, expanded = false }) {
                 className="inline-block w-[8px] h-[8px] bg-red-600 rounded 
                 mr-[5px]"
               ></span>
-              {viewers >= 1000 ? `${viewers / 1000}K` : viewers}
+              {viewers >= 1000 ? `${(viewers / 1000).toFixed(1)}K` : viewers}
             </span>
           </div>
         </div>
