@@ -3,17 +3,17 @@ function NavInput() {
     <div className="w-[400px] p-[5px] h-full mr-[-12px]">
       <div className="flex items-center h-full">
         <input
-          className="px-[10px] py-[5px] flex-1 h-[36px] rounded-l-md bg-nav-input-bg 
-          bg-clip-padding text-sm border-[2px] border-input-border font-inter
-          hover:border-input-border-hover outline-none text-input-txt
+          className="px-[10px] py-[5px] flex-1 h-[36px] rounded-l-md bg-input-bg-color 
+          bg-clip-padding text-sm border-[2px] border-input-border-color font-inter
+          hover:border-input-border-color-hover outline-none text-input-text-color
           font-normal placeholder:text-slate-500 dark:placeholder:text-gray-300
-          focus:bg-nav-input-bg-focus focus:border-input-border-focus"
+          focus:bg-input-bg-color-focus focus:border-input-border-color-focus"
           type="text"
           placeholder="Search"
         />
         <button
           className=" flex items-center justify-center ml-[1px] rounded-r-md w-[34px]
-          h-[36px] bg-input-btn-bg hover:bg-input-btn-bg-hover active:bg-input-btn-bg-active"
+          h-[36px] bg-search-button-bg-color hover:bg-search-button-bg-color-hover active:bg-search-button-bg-color-active"
           style={{
             cursor: "not-allowed",
           }}

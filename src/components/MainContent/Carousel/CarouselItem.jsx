@@ -61,7 +61,7 @@ function CarouselItem({
       >
         {isCentral && (
           <div
-            className="absolute top-[10px] left-[10px] bg-color-fill-live
+            className="absolute top-[10px] left-[10px] bg-live-bg-color
             font-inter text-[13px] rounded-[4px] px-[5px] font-semibold
             text-[#fff]"
           >
@@ -98,7 +98,7 @@ function CarouselItem({
                 >
                   {game}
                 </a>
-                <span className="block font-inter text-carousel-txt">
+                <span className="block font-inter text-carousel-text-color">
                   {viewers >= 1000
                     ? `${(viewers / 1000).toFixed(1)}K`
                     : viewers}{" "}
@@ -113,14 +113,14 @@ function CarouselItem({
                   key={index}
                   href="/#"
                   className="inline-block font-inter font-semibold text-[12px]
-                        text-tag-txt bg-tag-bg px-2 rounded-full"
+                        text-tag-text-color bg-tag-bg-color px-2 rounded-full"
                 >
                   {tag}
                 </a>
               ))}
             </div>
 
-            <p className="font-inter text-[13px] text-carousel-txt">
+            <p className="font-inter text-[13px] text-carousel-text-color">
               {user} is live! Come hang out in chat.
             </p>
           </div>

@@ -12,7 +12,7 @@ function SideBar() {
         isSidebarOpen ? "w-[240px]" : "w-[50px]"
       }`}
     >
-      <div className="text-base-txt relative">
+      <div className="text-base-text-color relative">
         <div
           className={`flex justify-center ${
             isSidebarOpen
@@ -58,7 +58,7 @@ function SideBar() {
 
       <div className="followed channels flex flex-col">
         {isSidebarOpen && (
-          <div className="text-base-txt py-[10px]">
+          <div className="text-base-text-color py-[10px]">
             <p className="font-inter font-semibold uppercase text-[13px] px-[10px] pt-[3px]">
               Followed Channels
             </p>
@@ -67,7 +67,7 @@ function SideBar() {
 
         {/* Heart SVG */}
         {!isSidebarOpen && (
-          <div className="py-[10px] text-alt-txt-color">
+          <div className="py-[10px] text-alt-text-color">
             <svg
               className="mx-auto"
               type="color-fill-current"
@@ -110,7 +110,7 @@ function SideBar() {
       <div className="recommended channels">
         {/* Live SVG */}
         {!isSidebarOpen && (
-          <div className="py-[10px] text-alt-txt-color">
+          <div className="py-[10px] text-alt-text-color">
             <svg
               type="color-fill-current"
               className="mx-auto"

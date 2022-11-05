@@ -6,7 +6,7 @@ function CarouselBtn({ children, left, right, onClick = () => false }) {
     >
       <button
         className="flex items-center justify-center w-[36px] h-[36px] rounded-md
-        bg-carousel-btn-bg hover:bg-carousel-btn-bg-hover text-carousel-btn-arrow"
+        bg-carousel-button-bg hover:bg-carousel-button-bg-hover text-carousel-button-arrow"
         onClick={onClick}
       >
         {children}
