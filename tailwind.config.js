@@ -56,6 +56,15 @@ module.exports = {
           "015": "var(--opac-015)",
         },
       },
+      animation: {
+        fadeOut: "fadeOut 0.4s linear 0.6s forwards",
+      },
+      keyframes: {
+        fadeOut: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+      },
     },
   },
   plugins: [],
