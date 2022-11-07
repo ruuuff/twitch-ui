@@ -57,10 +57,10 @@ module.exports = {
         },
       },
       animation: {
-        fadeOut: "fadeOut 0.4s linear 0.6s forwards",
+        fadeIn: "fadeIn 0.4s linear 0.6s forwards",
       },
       keyframes: {
-        fadeOut: {
+        fadeIn: {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
