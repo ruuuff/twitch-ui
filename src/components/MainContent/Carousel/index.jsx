@@ -5,6 +5,7 @@ import CarouselItem from "./CarouselItem";
 
 function Carousel() {
   const data = useMemo(() => followedChannels.slice(0, 10), []);
+  const [hadInteraction, setHadInteraction] = useState(false);
   const [centralItem, setCentralItem] = useState(0);
   const [showItems, setShowItems] = useState([]);
 
@@ -38,13 +39,9 @@ function Carousel() {
   }, [data, centralItem]);
 
   const updateCentralItem = useCallback(
-    (value, fixed) => {
-      if (fixed && centralItem === value) return;
-
-      if (fixed && centralItem !== value) {
-        setCentralItem(value);
-        return;
-      }
+    (value, manualValue = false) => {
+      if (!hadInteraction) setHadInteraction(true);
+      if (manualValue && centralItem !== value) return setCentralItem(value);
 
       setCentralItem((current) => {
         if (current + value < 0) return data.length - 1;
@@ -54,7 +51,7 @@ function Carousel() {
 
       updateSideItems();
     },
-    [centralItem, updateSideItems, data.length]
+    [centralItem, updateSideItems, data.length, hadInteraction]
   );
 
   useEffect(() => updateSideItems(), [updateSideItems]);
@@ -85,7 +82,8 @@ function Carousel() {
             channel={channel}
             showItems={showItems}
             centralItem={centralItem}
-            updateCentralItem={() => updateCentralItem(index, "fixed")}
+            hadInteraction={hadInteraction}
+            updateCentralItem={() => updateCentralItem(index, true)}
           />
         ))
       ) : (
