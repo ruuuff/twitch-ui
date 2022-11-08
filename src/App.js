@@ -1,6 +1,6 @@
 import NavBar from "./components/NavBar";
 import SideBar from "./components/SideBar";
-import MainContent from "./components/MainContent";
+import Main from "./components/Main";
 
 function App() {
   const theme = localStorage.getItem("theme");
@@ -25,7 +25,7 @@ function App() {
       <div className="flex h-[calc(100vh-50px)]">
         <SideBar />
         <div className="flex-1">
-          <MainContent />
+          <Main />
         </div>
       </div>
     </div>
