@@ -47,7 +47,7 @@ function CarouselItem({
       onClick={updateCentralItem}
     >
       <div
-        className={`relative h-full bg-black  ${
+        className={`relative h-full bg-black cursor-pointer ${
           isCentral
             ? "w-[530px] transition-[width] duration-[0s] delay-1000"
             : "w-full"
