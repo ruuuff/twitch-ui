@@ -2,7 +2,6 @@ const followedChannels = [
   {
     user: "casimito",
     game: "Just Chatting",
-    title: "Just a simple title example...",
     viewers: 28214,
     tags: ["Português"],
     avatar: "/users/casimito.png",
@@ -10,7 +9,6 @@ const followedChannels = [
   {
     user: "alanzoka",
     game: "Scorn",
-    title: "Just a simple title example...",
     viewers: 10920,
     tags: ["Português"],
     avatar: "/users/alanzoka.png",
@@ -18,7 +16,6 @@ const followedChannels = [
   {
     user: "YoDa",
     game: "League of Legends",
-    title: "Just a simple title example...",
     viewers: 7467,
     tags: ["Português"],
     avatar: "/users/YoDa.png",
@@ -26,7 +23,6 @@ const followedChannels = [
   {
     user: "Baiano",
     game: "League of Legends",
-    title: "Just a simple title example...",
     viewers: 7430,
     tags: ["Português"],
     avatar: "/users/Baiano.png",
@@ -34,7 +30,6 @@ const followedChannels = [
   {
     user: "frttt",
     game: "VALORANT",
-    title: "Just a simple title example...",
     viewers: 4300,
     tags: ["Português"],
     avatar: "/users/frttt.png",
@@ -42,7 +37,6 @@ const followedChannels = [
   {
     user: "Coreano",
     game: "Overwatch 2",
-    title: "Just a simple title example...",
     viewers: 3405,
     tags: ["Português"],
     avatar: "/users/Coreano.png",
@@ -50,7 +44,6 @@ const followedChannels = [
   {
     user: "Felps",
     game: "Cookie Clicker",
-    title: "Just a simple title example...",
     viewers: 2231,
     tags: ["Português"],
     avatar: "/users/Felps.png",
@@ -58,7 +51,6 @@ const followedChannels = [
   {
     user: "TFToddy",
     game: "Teamfight Tactics",
-    title: "Just a simple title example...",
     viewers: 1879,
     tags: ["Português"],
     avatar: "/users/TFToddy.png",
@@ -66,7 +58,6 @@ const followedChannels = [
   {
     user: "nuuhfps",
     game: "VALORANT",
-    title: "Just a simple title example...",
     viewers: 643,
     tags: ["Português"],
     avatar: "/users/nuuhfps.png",
@@ -74,7 +65,6 @@ const followedChannels = [
   {
     user: "laribasgal",
     game: "Overwatch 2",
-    title: "Just a simple title example...",
     viewers: 540,
     tags: ["Português"],
     avatar: "/users/laribasgal.png",
@@ -82,7 +72,6 @@ const followedChannels = [
   {
     user: "PatoPapao",
     game: "League of Legends",
-    title: "Just a simple title example...",
     viewers: 532,
     tags: ["Português"],
     avatar: "/users/PatoPapao.png",
@@ -90,7 +79,6 @@ const followedChannels = [
   {
     user: "MrFalll",
     game: "Raid: Shadow Legends",
-    title: "Just a simple title example...",
     viewers: 174,
     tags: ["Português"],
     avatar: "/users/MrFalll.png",
@@ -101,27 +89,23 @@ const recommendedChannels = [
   {
     user: "Recommended 1",
     game: "Minecraft",
-    title: "Just a simple title example...",
     viewers: 1100,
     tags: ["English"],
   },
   {
     user: "Recommended 2",
-    title: "Just a simple title example...",
     game: "Terraria",
     viewers: 70,
     tags: ["English"],
   },
   {
     user: "Recommended 3",
-    title: "Just a simple title example...",
     game: "VALORANT",
     viewers: 4800,
     tags: ["English"],
   },
   {
     user: "Recommended 4",
-    title: "Just a simple title example...",
     game: "Overwatch 2",
     viewers: 19,
     tags: ["English"],
@@ -129,14 +113,12 @@ const recommendedChannels = [
   {
     user: "Recommended 5",
     game: "League of Legends",
-    title: "Just a simple title example...",
     viewers: 436,
     tags: ["English"],
   },
   {
     user: "Recommended 6",
     game: "Teamfight Tactics",
-    title: "Just a simple title example...",
     viewers: 248,
     tags: ["English"],
   },
