@@ -1,5 +1,5 @@
 export default function Channel({ channel }) {
-  const { user, game, viewers, title, tags, avatar, rgb = "purple" } = channel;
+  const { user, game, viewers, title, tags, avatar } = channel;
 
   return (
     <div>
