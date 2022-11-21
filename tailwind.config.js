@@ -46,10 +46,16 @@ module.exports = {
         "tag-text-color": "var(--tag-text-color)",
         "tag-bg-color": "var(--tag-bg-color)",
 
+        "livechannel-viewer-count-bg": "var(--livechannel-viewer-count-bg)",
+        "livechannel-title-color": "var(--livechannel-title-color)",
+        "livechannel-subtitle-color": "var(--livechannel-subtitle-color)",
+        "livechannel-tag-bg": "var(--livechannel-tag-bg)",
+
         title: "var(--title)",
         subtitle: "var(--subtitle)",
         "live-bg-color": "var(--live-bg-color)",
         purple: "var(--purple)",
+
         opac: {
           "005": "var(--opac-005)",
           "01": "var(--opac-01)",
