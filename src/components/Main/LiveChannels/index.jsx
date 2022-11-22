@@ -1,10 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { AppContext } from "../../../contexts/AppContext";
 import { followedChannels } from "../../../data";
 import Channel from "./Channel";
 
 export default function LiveChannels() {
+  const { isSidebarOpen } = useContext(AppContext);
   const [gridCols, setGridCol] = useState(0);
-  const liveChannels = followedChannels.slice(0, gridCols);
+  const liveChannels = followedChannels.slice(
+    0,
+    isSidebarOpen ? gridCols - 1 : gridCols
+  );
 
   function onResize() {
     const width = window.innerWidth;
@@ -29,7 +34,9 @@ export default function LiveChannels() {
     <div
       className="grid gap-[10px]"
       style={{
-        gridTemplateColumns: `repeat(${gridCols}, minmax(0, 1fr))`,
+        gridTemplateColumns: `repeat(${
+          isSidebarOpen ? gridCols - 1 : gridCols
+        }, minmax(0, 1fr))`,
       }}
     >
       {gridCols !== 0 &&
