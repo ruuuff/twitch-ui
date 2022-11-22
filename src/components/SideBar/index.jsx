@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { followedChannels, recommendedChannels } from "../../data";
+import { AppContext } from "../../contexts/AppContext";
 import NavButton from "../NavBar/NavButton";
 import Channel from "./Channel";
 
 function SideBar() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const { isSidebarOpen, toggleSidebar } = useContext(AppContext);
 
   return (
     <div
@@ -21,7 +22,7 @@ function SideBar() {
           }`}
         >
           {isSidebarOpen ? (
-            <NavButton onClick={() => setIsSidebarOpen(false)} sralt="Collapse">
+            <NavButton onClick={() => toggleSidebar(false)} sralt="Collapse">
               <svg
                 width="20px"
                 height="20px"
@@ -37,7 +38,7 @@ function SideBar() {
               </svg>
             </NavButton>
           ) : (
-            <NavButton onClick={() => setIsSidebarOpen(true)} sralt="Expand">
+            <NavButton onClick={() => toggleSidebar(true)} sralt="Expand">
               <svg
                 width="20px"
                 height="20px"
