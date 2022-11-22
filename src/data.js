@@ -5,6 +5,7 @@ const followedChannels = [
     viewers: 28214,
     tags: ["Português"],
     avatar: "/users/casimito.png",
+    color: "#C0F500",
   },
   {
     user: "alanzoka",
@@ -19,6 +20,7 @@ const followedChannels = [
     viewers: 7467,
     tags: ["Português"],
     avatar: "/users/YoDa.png",
+    color: "#4156BE",
   },
   {
     user: "Baiano",
@@ -26,6 +28,7 @@ const followedChannels = [
     viewers: 7430,
     tags: ["Português"],
     avatar: "/users/Baiano.png",
+    color: "#FFA435",
   },
   {
     user: "frttt",
@@ -40,6 +43,7 @@ const followedChannels = [
     viewers: 3405,
     tags: ["Português"],
     avatar: "/users/Coreano.png",
+    color: "//#endregion000000",
   },
   {
     user: "Felps",
