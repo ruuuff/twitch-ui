@@ -39,13 +39,16 @@
   --carousel-button-arrow: #0e0e10;
   --carousel-item-bg: #fff;
   --carousel-text-color: #0e0e10;
-  --tag-text-color: rgba(0, 0, 0, 0.7);
-  --tag-bg-color: rgba(0, 0, 0, 0.05);
 
   --livechannel-viewer-count-bg: rgba(0, 0, 0, 0.6);
   --livechannel-title-color: #1f1f23;
   --livechannel-subtitle-color: #53535f;
   --livechannel-tag-bg: rgba(0, 0, 0, 0.05);
+
+  --tag-text-color: rgba(0, 0, 0, 0.7);
+  --tag-bg-color: rgba(0, 0, 0, 0.05);
+  --tag-hover-bg: rgba(0, 0, 0, 0.08);
+  --tag-active-bg: rgba(0, 0, 0, 0.13);
 
   --title: #1f1f23;
   --subtitle: #53535f;
@@ -93,12 +96,14 @@
   --carousel-item-bg: #18181b;
   --carousel-text-color: #efeff1;
 
-  --tag-text-color: hsl(0deg, 0%, 100%, 0.7);
-  --tag-bg-color: hsl(0deg, 0%, 100%, 0.15);
-
   --livechannel-title-color: #dedee3;
   --livechannel-subtitle-color: #adadb8;
   --livechannel-tag-bg: hsla(0, 0%, 100%, 0.08);
+
+  --tag-text-color: hsl(0deg, 0%, 100%, 0.7);
+  --tag-bg-color: hsl(0deg, 0%, 100%, 0.15);
+  --tag-hover-bg: hsla(0, 0%, 100%, 0.13);
+  --tag-active-bg: hsla(0, 0%, 100%, 0.16);
 
   --title: #dedee3;
   --subtitle: #adadb8;
