@@ -106,7 +106,8 @@ function CarouselItem({
                   key={index}
                   href="/#"
                   className="inline-block font-inter font-semibold text-[12px]
-                  text-tag-text-color bg-tag-bg-color px-2 rounded-full"
+                  text-tag-text-color bg-tag-bg-color px-2 rounded-full
+                  hover:bg-tag-hover-bg"
                 >
                   {tag}
                 </a>
