@@ -4,8 +4,8 @@ import CarouselBtn from "./CarouselBtn";
 import CarouselItem from "./CarouselItem";
 
 function Carousel() {
-  const data = useMemo(() => followedChannels.slice(0, 10), []);
-  const [hadInteraction, setHadInteraction] = useState(false);
+  const carouselData = useMemo(() => followedChannels.slice(0, 10), []);
+  const [firstInteraction, setFirstInteraction] = useState(false);
   const [centralItem, setCentralItem] = useState(0);
   const [showItems, setShowItems] = useState([]);
 
@@ -19,7 +19,7 @@ function Carousel() {
       if (centralItem - i >= 0) {
         array.unshift(centralItem - i);
       } else {
-        array.unshift(data.length - (negative + 1));
+        array.unshift(carouselData.length - (negative + 1));
         negative++;
       }
     }
@@ -27,7 +27,7 @@ function Carousel() {
     array.push(centralItem);
 
     for (let i = 1; i <= amount; i++) {
-      if (centralItem + i <= data.length - 1) {
+      if (centralItem + i <= carouselData.length - 1) {
         array.push(centralItem + i);
       } else {
         array.push(positive);
@@ -36,25 +36,38 @@ function Carousel() {
     }
 
     setShowItems(array);
-  }, [data, centralItem]);
+  }, [carouselData, centralItem]);
+
+  const manualUpdateCenterItem = useCallback(
+    (value) => {
+      if (!firstInteraction && centralItem !== value) setFirstInteraction(true);
+      setCentralItem(value);
+      updateSideItems();
+    },
+    [
+      firstInteraction,
+      setFirstInteraction,
+      centralItem,
+      setCentralItem,
+      updateSideItems,
+    ]
+  );
 
   const updateCentralItem = useCallback(
-    (value, manualValue = false) => {
-      if (!hadInteraction) setHadInteraction(true);
-      if (manualValue && centralItem !== value) return setCentralItem(value);
-
+    (value) => {
+      if (!firstInteraction && centralItem !== value) setFirstInteraction(true);
       setCentralItem((current) => {
-        if (current + value < 0) return data.length - 1;
-        else if (current + value >= data.length) return 0;
+        if (current + value < 0) return carouselData.length - 1;
+        else if (current + value >= carouselData.length) return 0;
         return current + value;
       });
 
       updateSideItems();
     },
-    [centralItem, updateSideItems, data.length, hadInteraction]
+    [centralItem, updateSideItems, carouselData.length, firstInteraction]
   );
 
-  useEffect(() => updateSideItems(), [updateSideItems]);
+  useEffect(updateSideItems, [updateSideItems]);
 
   return (
     <div className="h-[300px] w-full relative">
@@ -75,15 +88,15 @@ function Carousel() {
       </CarouselBtn>
 
       {showItems.length ? (
-        data.map((channel, index) => (
+        carouselData.map((channel, index) => (
           <CarouselItem
             key={index}
             index={index}
             channel={channel}
             showItems={showItems}
             centralItem={centralItem}
-            hadInteraction={hadInteraction}
-            updateCentralItem={() => updateCentralItem(index, true)}
+            firstInteraction={firstInteraction}
+            manualUpdateCenterItem={() => manualUpdateCenterItem(index)}
           />
         ))
       ) : (
