@@ -1,54 +1,15 @@
+import HoverEffect from "../../HoverEffect";
+import LiveTag from "../../LiveTag";
+import Marker from "../../Marker";
+
 export default function Channel({ channel }) {
-  const {
-    user,
-    game,
-    viewers,
-    title,
-    tags,
-    avatar,
-    color = "#9147ff",
-  } = channel;
+  const { user, game, viewers, title, tags, avatar, color } = channel;
 
   return (
     <div>
-      <div className="relative w-full pb-[56.36%] cursor-pointer group ">
-        <div
-          className="absolute bottom-0 h-[6px] w-full z-[1]"
-          style={{ background: color }}
-        ></div>
-        <div
-          className="absolute left-0 h-full w-[6px] z-[1]"
-          style={{ background: color }}
-        ></div>
-        <div
-          className="absolute top-0 left-0 h-[6px] w-[6.5px] z-[1]
-          group-hover:top-[-6px] transition-[top] duration-150"
-          style={{
-            background: color,
-            clipPath: "polygon(100% 0, 0 100%, 100% 100%)",
-          }}
-        ></div>
-        <div
-          className="absolute bottom-0 right-0 h-[6px] w-[6px] z-[1]
-          group-hover:right-[-6px] transition-[right] duration-150"
-          style={{
-            background: color,
-            clipPath: "polygon(100% 0, 0 100%, 0 0)",
-          }}
-        ></div>
-
-        <div
-          className="absolute inset-0 z-[2] bg-[#000] dark:bg-[#222]
-          transform group-hover:translate-x-[6px] group-hover:translate-y-[-6px]
-          transition-[transform] duration-150"
-        >
-          <span
-            className="absolute top-[10px] left-[10px] bg-live-bg-color
-            font-inter text-[13px] rounded-[4px] px-[5px] font-semibold
-            text-white"
-          >
-            LIVE
-          </span>
+      <HoverEffect color={color} pb="56.36%">
+        <div className="bg-black dark:bg-[#222] w-full h-full">
+          <LiveTag />
 
           <span
             className="absolute bottom-[10px] left-[10px] font-inter px-1
@@ -58,65 +19,55 @@ export default function Channel({ channel }) {
             viewers
           </span>
         </div>
-      </div>
+      </HoverEffect>
 
-      <div className="flex mt-[8px]">
-        <div className="flex flex-1">
-          <div className="mr-[10px]">
-            <img
-              className="w-[40px] h-[40px] rounded-full"
-              src={avatar}
-              alt={user}
-            />
+      <div className="flex mt-[9px]">
+        <div className="mr-[10px]">
+          <img
+            className="w-[40px] h-[40px] rounded-full"
+            src={avatar}
+            alt={user}
+          />
+        </div>
+
+        <div className="flex-1 font-inter">
+          <div className="mb-[2px]">
+            <a
+              className="block text-[14px] font-semibold text-livechannel-title-color
+              hover:text-purple mt-[-1px]"
+              href="/#"
+            >
+              {title || "title not provided"}
+            </a>
           </div>
-
-          <div className="flex flex-1 flex-col font-inter">
-            <div className="mb-[1px]">
-              <a
-                className="block text-[14px] font-semibold text-livechannel-title-color
-              hover:text-purple mt-[-1px] mb-[1px]"
-                href="/#"
-              >
-                {title || "title not provided"}
-              </a>
-            </div>
-            <div>
-              <a
-                className="block text-[13px] text-livechannel-subtitle-color"
-                href="/#"
-              >
-                {user}
-              </a>
-            </div>
-            <div className="leading-[13px] mt-[2px]">
-              <a
-                className="inline-block text-[13px] text-livechannel-subtitle-color 
+          <div>
+            <a
+              className="block text-[13px] text-livechannel-subtitle-color"
+              href="/#"
+            >
+              {user}
+            </a>
+          </div>
+          <div className="leading-[13px] mt-[2px]">
+            <a
+              className="inline-block text-[13px] text-livechannel-subtitle-color 
               hover:text-purple"
-                href="/#"
-              >
-                {game}
-              </a>
-            </div>
-            <div className="flex mt-[10px]">
-              {tags.map((tag, index) => (
-                <a
-                  key={index}
-                  href="/#"
-                  className="inline-block font-semibold text-[12px] rounded-full
-                bg-livechannel-tag-bg text-tag-text-color px-[10px] py-[1px]
-                hover:bg-tag-hover-bg"
-                >
-                  {tag}
-                </a>
-              ))}
-            </div>
+              href="/#"
+            >
+              {game}
+            </a>
+          </div>
+          <div className="flex mt-[10px]">
+            {tags.map((tag, index) => (
+              <Marker key={index} tag={tag} large />
+            ))}
           </div>
         </div>
 
         <div>
           <button
             className="flex items-center justify-center w-[24px] h-[24px]
-            hover:bg-tag-hover-bg active:bg-tag-active-bg rounded-[2px]"
+            rounded-[2px] hover:bg-tag-hover-bg active:bg-tag-active-bg"
           >
             <svg
               width="16px"
