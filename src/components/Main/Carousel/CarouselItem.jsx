@@ -1,10 +1,13 @@
+import LiveTag from "../../LiveTag";
+import Marker from "../../Marker";
+
 function CarouselItem({
   index,
   channel,
   showItems,
   centralItem,
-  hadInteraction,
-  updateCentralItem,
+  firstInteraction,
+  manualUpdateCenterItem,
 }) {
   const { user, game, viewers, tags, avatar } = channel;
   const isCentral = index === centralItem;
@@ -16,21 +19,26 @@ function CarouselItem({
 
     // 2
     if (itemIndex === 2 || itemIndex === showItems.length - 3) {
-      const baseStyle = "w-[637px] h-[255px] z-[7]";
-      return baseStyle + (itemIndex === 2 ? " left-[40%]" : " left-[60%]");
+      return (
+        "w-[637px] h-[255px] z-[7] " +
+        (itemIndex === 2 ? "left-[40%]" : "left-[60%]")
+      );
     }
 
     // 3
     if (itemIndex === 1 || itemIndex === showItems.length - 2) {
-      const baseStyle = "w-[525px] h-[210px] z-[6]";
-      return baseStyle + (itemIndex === 1 ? " left-[30%]" : " left-[70%]");
+      return (
+        "w-[525px] h-[210px] z-[6] " +
+        (itemIndex === 1 ? "left-[30%]" : "left-[70%]")
+      );
     }
 
     // hidden
     if (itemIndex === 0 || itemIndex === showItems.length - 1) {
-      const baseStyle =
-        "w-[400px] h-[169px] z-[5] opacity-0 pointer-events-none";
-      return baseStyle + (itemIndex === 0 ? " left-[20%]" : " left-[80%]");
+      return (
+        "w-[400px] h-[169px] z-[5] opacity-0 pointer-events-none " +
+        (itemIndex === 0 ? "left-[20%]" : "left-[80%]")
+      );
     }
 
     return "h-[0px] w-[0px] left-[50%] opacity-0";
@@ -44,7 +52,7 @@ function CarouselItem({
         transition:
           "left .6s, width .6s, height .6s, opacity .6s, transform .2s",
       }}
-      onClick={updateCentralItem}
+      onClick={manualUpdateCenterItem}
     >
       <div
         className={`relative h-full bg-black cursor-pointer ${
@@ -53,21 +61,15 @@ function CarouselItem({
             : "w-full"
         }`}
       >
-        {isCentral && (
-          <div
-            className="absolute top-[10px] left-[10px] bg-live-bg-color
-            font-inter text-[13px] rounded-[4px] px-[5px] font-semibold
-            text-[#fff]"
-          >
-            LIVE
-          </div>
-        )}
+        {isCentral && <LiveTag />}
       </div>
 
       {isCentral && (
         <div
           className={`absolute right-0 top-0 bottom-0 w-[220px]
-          bg-carousel-item-bg ${hadInteraction && "opacity-0 animate-fadeIn"}`}
+          bg-carousel-item-bg ${
+            firstInteraction && "opacity-0 animate-fadeIn"
+          }`}
         >
           <div className="w-full h-full p-[10px] space-y-[10px]">
             <div className="flex">
@@ -102,15 +104,7 @@ function CarouselItem({
 
             <div className="flex">
               {tags.map((tag, index) => (
-                <a
-                  key={index}
-                  href="/#"
-                  className="inline-block font-inter font-semibold text-[12px]
-                  text-tag-text-color bg-tag-bg-color px-2 rounded-full
-                  hover:bg-tag-hover-bg"
-                >
-                  {tag}
-                </a>
+                <Marker key={index} tag={tag} />
               ))}
             </div>
 
