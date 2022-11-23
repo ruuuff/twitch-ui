@@ -43,7 +43,6 @@
   --livechannel-viewer-count-bg: rgba(0, 0, 0, 0.6);
   --livechannel-title-color: #1f1f23;
   --livechannel-subtitle-color: #53535f;
-  --livechannel-tag-bg: rgba(0, 0, 0, 0.05);
 
   --tag-text-color: rgba(0, 0, 0, 0.7);
   --tag-bg-color: rgba(0, 0, 0, 0.05);
@@ -98,7 +97,6 @@
 
   --livechannel-title-color: #dedee3;
   --livechannel-subtitle-color: #adadb8;
-  --livechannel-tag-bg: hsla(0, 0%, 100%, 0.08);
 
   --tag-text-color: hsl(0deg, 0%, 100%, 0.7);
   --tag-bg-color: hsl(0deg, 0%, 100%, 0.15);
