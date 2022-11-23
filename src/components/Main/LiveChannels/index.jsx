@@ -6,15 +6,14 @@ import Channel from "./Channel";
 export default function LiveChannels() {
   const { isSidebarOpen } = useContext(AppContext);
   const [gridCols, setGridCol] = useState(0);
-  const liveChannels = followedChannels.slice(
-    0,
-    isSidebarOpen ? gridCols - 1 : gridCols
-  );
+  const cols =
+    isSidebarOpen && window.innerWidth <= 1920 ? gridCols - 1 : gridCols;
+  const liveChannels = followedChannels.slice(0, cols);
 
   function onResize() {
     const width = window.innerWidth;
 
-    setGridCol((current) => {
+    setGridCol(() => {
       if (width >= 1880) return 6;
       else if (width >= 1580) return 5;
       else if (width >= 1280) return 4;
@@ -34,9 +33,7 @@ export default function LiveChannels() {
     <div
       className="grid gap-[10px]"
       style={{
-        gridTemplateColumns: `repeat(${
-          isSidebarOpen ? gridCols - 1 : gridCols
-        }, minmax(0, 1fr))`,
+        gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
       }}
     >
       {gridCols !== 0 &&
