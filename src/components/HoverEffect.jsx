@@ -1,6 +1,9 @@
 export default function HoverEffect({ children, color = "#9147ff", pb }) {
   return (
-    <div className={`group relative w-full pb-[${pb}] cursor-pointer`}>
+    <div
+      className="group relative w-full cursor-pointer"
+      style={{ paddingBottom: pb }}
+    >
       {/* Bottom */}
       <div
         className="absolute bottom-0 h-[6px] w-full z-[1]"
