@@ -1,5 +1,6 @@
 import Carousel from "./Carousel";
 import LiveChannels from "./LiveChannels";
+import SectionTitle from "./SectionTitle";
 
 function MainContent() {
   return (
@@ -10,14 +11,7 @@ function MainContent() {
         </div>
 
         <div className="mt-[37px]">
-          <div className="mb-2">
-            <span className="text-base-text-color font-roobert font-semibold text-[18px]">
-              <a href="/#" className="text-purple hover:underline">
-                Live channels
-              </a>{" "}
-              we think you&#8217;ll like
-            </span>
-          </div>
+          <SectionTitle title={["Live channels", "we think you’ll like"]} />
           <LiveChannels />
         </div>
       </div>
