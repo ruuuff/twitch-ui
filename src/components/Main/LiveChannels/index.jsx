@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { AppContext } from "../../../contexts/AppContext";
 import { followedChannels } from "../../../data";
 import Channel from "./Channel";
+import ShowMore from "../ShowMore";
 
 export default function LiveChannels() {
   const { isSidebarOpen } = useContext(AppContext);
@@ -30,16 +31,19 @@ export default function LiveChannels() {
   }, []);
 
   return (
-    <div
-      className="grid gap-[10px]"
-      style={{
-        gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
-      }}
-    >
-      {gridCols !== 0 &&
-        liveChannels.map((channel, index) => (
-          <Channel key={index} channel={channel} />
-        ))}
+    <div>
+      <div
+        className="grid gap-[10px]"
+        style={{
+          gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
+        }}
+      >
+        {gridCols !== 0 &&
+          liveChannels.map((channel, index) => (
+            <Channel key={index} channel={channel} />
+          ))}
+      </div>
+      <ShowMore />
     </div>
   );
 }
