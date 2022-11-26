@@ -30,11 +30,11 @@ export default function Channel({ channel }) {
           />
         </div>
 
-        <div className="flex-1 font-inter">
+        <div className="flex-1 font-inter overflow-hidden">
           <div className="mb-[2px]">
             <a
               className="block text-[14px] font-semibold text-livechannel-title-color
-              hover:text-purple mt-[-1px]"
+              hover:text-purple mt-[-1px] truncate"
               href="/#"
             >
               {title || "title not provided"}
