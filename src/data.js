@@ -43,7 +43,7 @@ const followedChannels = [
     viewers: 3405,
     tags: ["Português"],
     avatar: "/users/Coreano.png",
-    color: "//#endregion000000",
+    color: "#000000",
   },
   {
     user: "Felps",
@@ -128,4 +128,55 @@ const recommendedChannels = [
   },
 ];
 
-export { followedChannels, recommendedChannels };
+const categories = [
+  {
+    category: "VALORANT",
+    image: "/categories/valorant.jpg",
+  },
+  {
+    category: "Sports",
+    image: "/categories/sports.jpg",
+  },
+  {
+    category: "Just Chatting",
+    image: "/categories/just-chatting.jpg",
+  },
+  {
+    category: "Teamfight Tactics",
+    image: "/categories/teamfight-tactics.jpg",
+  },
+  {
+    category: "League of Legends",
+    image: "/categories/league-of-legends.jpg",
+  },
+  {
+    category: "Overwatch 2",
+    image: "/categories/overwatch-2.jpg",
+  },
+  {
+    category: "Genshin Impact",
+    image: "/categories/genshin-impact.jpg",
+  },
+  {
+    category: "Pokémon Scarlet/Violet",
+    image: "/categories/pokemon-scarlet.jpg",
+  },
+  {
+    category: "Minecraft",
+    image: "/categories/minecraft.jpg",
+  },
+  {
+    category: "Red Dead Redemption 2",
+    image: "/categories/red-read-redemption.jpg",
+  },
+  {
+    category: "Art",
+    image: "/categories/art.jpg",
+  },
+  {
+    category: "God of War Ragnarök",
+    image: "/categories/gow-ragnarock.jpg",
+  },
+];
+
+export { followedChannels, recommendedChannels, categories };
