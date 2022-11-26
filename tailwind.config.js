@@ -52,6 +52,10 @@ module.exports = {
         "tag-hover-bg": "var(--tag-hover-bg)",
         "tag-active-bg": "var(--tag-active-bg)",
 
+        "dash-bg": "var(--dash-bg)",
+        "showmore-hover-bg": "var(--showmore-hover-bg)",
+        "showmore-active-bg": "var(--showmore-active-bg)",
+
         title: "var(--title)",
         subtitle: "var(--subtitle)",
         "live-bg-color": "var(--live-bg-color)",
