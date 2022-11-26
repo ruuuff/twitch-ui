@@ -1,6 +1,7 @@
 import Carousel from "./Carousel";
 import LiveChannels from "./LiveChannels";
 import SectionTitle from "./SectionTitle";
+import Categories from "./Categories";
 
 function MainContent() {
   return (
@@ -13,6 +14,11 @@ function MainContent() {
         <div className="mt-[37px]">
           <SectionTitle title={["Live channels", "we think you’ll like"]} />
           <LiveChannels />
+        </div>
+
+        <div>
+          <SectionTitle title={["Categories", "we think you’ll like"]} />
+          <Categories />
         </div>
       </div>
     </main>
