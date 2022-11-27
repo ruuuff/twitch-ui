@@ -35,7 +35,8 @@ export default function HoverEffect({ children, color = "#9147ff", pb }) {
 
       <div
         className="absolute inset-0 z-[2] transform group-hover:translate-x-[6px] 
-        group-hover:translate-y-[-6px] transition-[transform] duration-150"
+        group-hover:translate-y-[-6px] transition-[transform] duration-100
+        ease-linear"
       >
         {children}
       </div>
