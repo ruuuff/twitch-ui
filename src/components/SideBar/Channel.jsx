@@ -1,3 +1,5 @@
+import { getViewersFormatted } from "../../utils";
+
 function Channel({ channel, expanded = false }) {
   const { user, game, viewers, avatar } = channel;
 
@@ -39,7 +41,7 @@ function Channel({ channel, expanded = false }) {
                 className="inline-block w-[8px] h-[8px] bg-red-600 rounded 
                 mr-[5px]"
               ></span>
-              {viewers >= 1000 ? `${(viewers / 1000).toFixed(1)}K` : viewers}
+              {getViewersFormatted(viewers)}
             </span>
           </div>
         </div>

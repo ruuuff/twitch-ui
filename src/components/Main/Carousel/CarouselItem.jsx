@@ -1,3 +1,4 @@
+import { getViewersFormatted } from "../../../utils";
 import LiveTag from "../../LiveTag";
 import Marker from "../../Marker";
 
@@ -94,10 +95,7 @@ function CarouselItem({
                   {game}
                 </a>
                 <span className="block font-inter text-carousel-text-color">
-                  {viewers >= 1000
-                    ? `${(viewers / 1000).toFixed(1)}K`
-                    : viewers}{" "}
-                  viewers
+                  {getViewersFormatted(viewers)} viewers
                 </span>
               </div>
             </div>
