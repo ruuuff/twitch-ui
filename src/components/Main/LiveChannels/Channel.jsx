@@ -1,6 +1,9 @@
 import HoverEffect from "../../HoverEffect";
 import LiveTag from "../../LiveTag";
 import Marker from "../../Marker";
+import Title from "./Title";
+import OptionsBtn from "./OptionsBtn";
+import { getViewersFormatted } from "../../../utils";
 
 export default function Channel({ channel }) {
   const { user, game, viewers, title, tags, avatar, color } = channel;
@@ -15,8 +18,7 @@ export default function Channel({ channel }) {
             className="absolute bottom-[10px] left-[10px] font-inter px-1
             text-white text-[13px] bg-livechannel-viewer-count-bg rounded-[4px]"
           >
-            {viewers >= 1000 ? `${(viewers / 1000).toFixed(1)}K` : viewers}{" "}
-            viewers
+            {getViewersFormatted(viewers)} viewers
           </span>
         </div>
       </HoverEffect>
@@ -31,15 +33,7 @@ export default function Channel({ channel }) {
         </div>
 
         <div className="flex-1 font-inter overflow-hidden">
-          <div className="mb-[2px]">
-            <a
-              className="block text-[14px] font-semibold text-livechannel-title-color
-              hover:text-purple mt-[-1px] truncate"
-              href="/#"
-            >
-              {title || "title not provided"}
-            </a>
-          </div>
+          <Title title={title} />
           <div>
             <a
               className="block text-[13px] text-livechannel-subtitle-color"
@@ -48,14 +42,16 @@ export default function Channel({ channel }) {
               {user}
             </a>
           </div>
-          <div className="leading-[13px] mt-[2px]">
-            <a
-              className="inline-block text-[13px] text-livechannel-subtitle-color 
-              hover:text-purple"
-              href="/#"
-            >
-              {game}
-            </a>
+          <div className="leading-[13px]">
+            <div className="mt-[2px]">
+              <a
+                className="inline-block text-[13px] text-livechannel-subtitle-color 
+                hover:text-purple"
+                href="/#"
+              >
+                {game}
+              </a>
+            </div>
           </div>
           <div className="flex mt-[10px]">
             {tags.map((tag, index) => (
@@ -65,24 +61,7 @@ export default function Channel({ channel }) {
         </div>
 
         <div>
-          <button
-            className="flex items-center justify-center w-[24px] h-[24px]
-            rounded-[2px] hover:bg-tag-hover-bg active:bg-tag-active-bg"
-          >
-            <svg
-              width="16px"
-              height="16px"
-              className="fill-base-text-color"
-              version="1.1"
-              viewBox="0 0 20 20"
-              x="0px"
-              y="0px"
-            >
-              <g>
-                <path d="M10 18a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM8 4a2 2 0 104 0 2 2 0 00-4 0z"></path>
-              </g>
-            </svg>
-          </button>
+          <OptionsBtn />
         </div>
       </div>
     </div>
