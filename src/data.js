@@ -51,6 +51,7 @@ const followedChannels = [
     viewers: 2231,
     tags: ["Português"],
     avatar: "/users/Felps.png",
+    color: "#FF3D6C",
   },
   {
     user: "TFToddy",
@@ -58,6 +59,15 @@ const followedChannels = [
     viewers: 1879,
     tags: ["Português"],
     avatar: "/users/TFToddy.png",
+    color: "#1E1B5E",
+  },
+  {
+    user: "Prizzaa",
+    game: "Just Chatting",
+    viewers: 723,
+    tags: ["Português"],
+    avatar: "/users/Prizzaa.png",
+    color: "#FAB3FF",
   },
   {
     user: "nuuhfps",
@@ -65,6 +75,7 @@ const followedChannels = [
     viewers: 643,
     tags: ["Português"],
     avatar: "/users/nuuhfps.png",
+    color: "#EFF133",
   },
   {
     user: "laribasgal",
@@ -72,6 +83,7 @@ const followedChannels = [
     viewers: 540,
     tags: ["Português"],
     avatar: "/users/laribasgal.png",
+    color: "#F5F064",
   },
   {
     user: "PatoPapao",
@@ -79,13 +91,7 @@ const followedChannels = [
     viewers: 532,
     tags: ["Português"],
     avatar: "/users/PatoPapao.png",
-  },
-  {
-    user: "MrFalll",
-    game: "Raid: Shadow Legends",
-    viewers: 174,
-    tags: ["Português"],
-    avatar: "/users/MrFalll.png",
+    color: "#00C7AC",
   },
 ];
 
@@ -130,52 +136,76 @@ const recommendedChannels = [
 
 const categories = [
   {
-    category: "VALORANT",
+    name: "VALORANT",
     image: "/categories/valorant.jpg",
+    viewers: 108200,
+    tags: ["Shooter", "FPS"],
   },
   {
-    category: "Sports",
+    name: "Sports",
     image: "/categories/sports.jpg",
+    viewers: 146829,
+    tags: ["IRL"],
   },
   {
-    category: "Just Chatting",
+    name: "Just Chatting",
     image: "/categories/just-chatting.jpg",
+    viewers: 376239,
+    tags: ["IRL"],
   },
   {
-    category: "Teamfight Tactics",
+    name: "Teamfight Tactics",
     image: "/categories/teamfight-tactics.jpg",
+    viewers: 16440,
+    tags: ["Strategy"],
   },
   {
-    category: "League of Legends",
+    name: "League of Legends",
     image: "/categories/league-of-legends.jpg",
+    viewers: 93854,
+    tags: ["MOBA", "Action"],
   },
   {
-    category: "Overwatch 2",
+    name: "Overwatch 2",
     image: "/categories/overwatch-2.jpg",
+    viewers: 42320,
+    tags: ["FPS", "Shooter"],
   },
   {
-    category: "Genshin Impact",
+    name: "Genshin Impact",
     image: "/categories/genshin-impact.jpg",
+    viewers: 26602,
+    tags: ["Action", "RPG"],
   },
   {
-    category: "Pokémon Scarlet/Violet",
+    name: "Pokémon Scarlet/Violet",
     image: "/categories/pokemon-scarlet.jpg",
+    viewers: 61320,
+    tags: ["RPG"],
   },
   {
-    category: "Minecraft",
+    name: "Minecraft",
     image: "/categories/minecraft.jpg",
+    viewers: 136620,
+    tags: ["MMO"],
   },
   {
-    category: "Red Dead Redemption 2",
+    name: "Red Dead Redemption 2",
     image: "/categories/red-read-redemption.jpg",
+    viewers: 2630,
+    tags: ["Action"],
   },
   {
-    category: "Art",
+    name: "Art",
     image: "/categories/art.jpg",
+    viewers: 12720,
+    tags: ["Creative", "IRL"],
   },
   {
-    category: "God of War Ragnarök",
+    name: "God of War Ragnarök",
     image: "/categories/gow-ragnarock.jpg",
+    viewers: 16720,
+    tags: ["Action"],
   },
 ];
 
