@@ -53,6 +53,11 @@
   --showmore-hover-bg: rgba(0, 0, 0, 0.08);
   --showmore-active-bg: rgba(0, 0, 0, 0.13);
 
+  --category-bg: #772ce8;
+  --category-bg: #772ce8;
+  --category-anchor-hover: rgba(0, 0, 0, 0.08);
+  --category-anchor-active: rgba(0, 0, 0, 0.13);
+
   --title: #1f1f23;
   --subtitle: #53535f;
   --live-bg-color: #eb0400;
@@ -103,13 +108,16 @@
   --livechannel-subtitle-color: #adadb8;
 
   --tag-text-color: hsl(0deg, 0%, 100%, 0.7);
-  --tag-bg-color: hsl(0deg, 0%, 100%, 0.15);
+  --tag-bg-color: hsl(0deg, 0%, 100%, 0.08);
   --tag-hover-bg: hsla(0, 0%, 100%, 0.13);
   --tag-active-bg: hsla(0, 0%, 100%, 0.16);
 
   --dash-bg: hsla(0, 0%, 100%, 0.08);
   --showmore-hover-bg: hsla(0, 0%, 100%, 0.13);
   --showmore-active-bg: hsla(0, 0%, 100%, 0.16);
+
+  --category-anchor-hover: hsla(0, 0%, 100%, 0.13);
+  --category-anchor-active: hsla(0, 0%, 100%, 0.16);
 
   --title: #dedee3;
   --subtitle: #adadb8;

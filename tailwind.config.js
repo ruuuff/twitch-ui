@@ -56,6 +56,10 @@ module.exports = {
         "showmore-hover-bg": "var(--showmore-hover-bg)",
         "showmore-active-bg": "var(--showmore-active-bg)",
 
+        "category-bg": "var(--category-bg)",
+        "category-anchor-hover": "var(--category-anchor-hover)",
+        "category-anchor-active": "var(--category-anchor-active)",
+
         title: "var(--title)",
         subtitle: "var(--subtitle)",
         "live-bg-color": "var(--live-bg-color)",
