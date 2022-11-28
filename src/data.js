@@ -134,79 +134,102 @@ const recommendedChannels = [
   },
 ];
 
-const categories = [
+const games = [
   {
     name: "VALORANT",
-    image: "/categories/valorant.jpg",
+    image: "/assets/valorant.jpg",
     viewers: 108200,
     tags: ["Shooter", "FPS"],
   },
   {
     name: "Sports",
-    image: "/categories/sports.jpg",
+    image: "/assets/sports.jpg",
     viewers: 146829,
     tags: ["IRL"],
   },
   {
     name: "Just Chatting",
-    image: "/categories/just-chatting.jpg",
+    image: "/assets/just-chatting.jpg",
     viewers: 376239,
     tags: ["IRL"],
   },
   {
     name: "Teamfight Tactics",
-    image: "/categories/teamfight-tactics.jpg",
+    image: "/assets/teamfight-tactics.jpg",
     viewers: 16440,
     tags: ["Strategy"],
   },
   {
     name: "League of Legends",
-    image: "/categories/league-of-legends.jpg",
+    image: "/assets/league-of-legends.jpg",
     viewers: 93854,
     tags: ["MOBA", "Action"],
   },
   {
     name: "Overwatch 2",
-    image: "/categories/overwatch-2.jpg",
+    image: "/assets/overwatch-2.jpg",
     viewers: 42320,
     tags: ["FPS", "Shooter"],
   },
   {
     name: "Genshin Impact",
-    image: "/categories/genshin-impact.jpg",
+    image: "/assets/genshin-impact.jpg",
     viewers: 26602,
     tags: ["Action", "RPG"],
   },
   {
     name: "Pokémon Scarlet/Violet",
-    image: "/categories/pokemon-scarlet.jpg",
+    image: "/assets/pokemon-scarlet.jpg",
     viewers: 61320,
     tags: ["RPG"],
   },
   {
     name: "Minecraft",
-    image: "/categories/minecraft.jpg",
+    image: "/assets/minecraft.jpg",
     viewers: 136620,
     tags: ["MMO"],
   },
   {
     name: "Red Dead Redemption 2",
-    image: "/categories/red-read-redemption.jpg",
+    image: "/assets/red-read-redemption.jpg",
     viewers: 2630,
     tags: ["Action"],
   },
   {
     name: "Art",
-    image: "/categories/art.jpg",
+    image: "/assets/art.jpg",
     viewers: 12720,
     tags: ["Creative", "IRL"],
   },
   {
     name: "God of War Ragnarök",
-    image: "/categories/gow-ragnarock.jpg",
+    image: "/assets/gow-ragnarock.jpg",
     viewers: 16720,
     tags: ["Action"],
   },
 ];
 
-export { followedChannels, recommendedChannels, categories };
+const categories = [
+  {
+    name: "Games",
+    image: "/assets/games.svg",
+  },
+  {
+    name: "IRL",
+    image: "/assets/irl.svg",
+  },
+  {
+    name: "Music",
+    image: "/assets/music.svg",
+  },
+  {
+    name: "Esports",
+    image: "/assets/esports.svg",
+  },
+  {
+    name: "Creative",
+    image: "/assets/creative.svg",
+  },
+];
+
+export { followedChannels, recommendedChannels, games, categories };
