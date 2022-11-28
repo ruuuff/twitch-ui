@@ -5,7 +5,7 @@ import Marker from "../../Marker";
 import { getViewersFormatted } from "../../../utils";
 
 export default function CategoryCard(props) {
-  const { name, image, viewers, tags } = props.category;
+  const { name, image, viewers, tags } = props.game;
 
   return (
     <div>
