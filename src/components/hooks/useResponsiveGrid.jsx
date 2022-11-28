@@ -2,8 +2,6 @@ import { useState, useEffect, useContext, useCallback } from "react";
 import { AppContext } from "../../contexts/AppContext";
 
 export default function useResponsiveGrid(
-  data = [],
-  showMore = false,
   breaks = [6, 5, 4, 3, 2],
   reduceAmount = 1,
   size = "minmax(0, 1fr)"
@@ -34,10 +32,10 @@ export default function useResponsiveGrid(
     return () => window.removeEventListener("resize", onResize);
   }, [onResize]);
 
-  return [
-    data.slice(0, showMore ? cols * 2 : cols),
-    {
+  return {
+    cols,
+    style: {
       gridTemplateColumns: `repeat(${cols}, ${size})`,
     },
-  ];
+  };
 }
