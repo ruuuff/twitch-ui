@@ -5,7 +5,7 @@ export const AppContext = createContext({});
 export default function AppProvider({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  const toggleSidebar = () => setIsSidebarOpen((curr) => !curr);
+  const toggleSidebar = () => setIsSidebarOpen((current) => !current);
 
   return (
     <AppContext.Provider
