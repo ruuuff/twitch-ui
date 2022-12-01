@@ -3,7 +3,6 @@ import LiveChannels from "./LiveChannels";
 import SectionTitle from "./SectionTitle";
 import Games from "./Games";
 import Categories from "./Categories";
-import Dash from "./Dash";
 
 function MainContent() {
   return (
@@ -21,10 +20,6 @@ function MainContent() {
         <div>
           <SectionTitle title={["Categories", "we think you’ll like"]} />
           <Games />
-        </div>
-
-        <div className="mt-[8px]">
-          <Dash />
         </div>
 
         <div>
