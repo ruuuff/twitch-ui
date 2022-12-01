@@ -2,13 +2,13 @@ import { categories } from "../../../data";
 
 export default function Categories() {
   return (
-    <div className="grid gap-2 grid-cols-5 mt-[20px]">
+    <div className="grid gap-2 grid-cols-5 mt-[20px] px-[2px] pt-[2px]">
       {categories.map(({ name, image }, index) => (
         <a
           key={index}
           href="/#"
           className="group relative h-[45px] bg-category-bg 
-          rounded-[10px] cursor-pointer"
+          rounded-[5px] cursor-pointer"
         >
           <div
             className="w-full h-full flex items-center 
