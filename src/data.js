@@ -1,6 +1,8 @@
 const followedChannels = [
   {
     user: "casimito",
+    title:
+      "AO VIVO E COM IMAGENS: BRASIL X SUÍÇA | RODADA 2 | FASE DE GRUPOS | COPA DO MUNDO 2022",
     game: "Just Chatting",
     viewers: 28214,
     tags: ["Português"],
@@ -9,6 +11,7 @@ const followedChannels = [
   },
   {
     user: "alanzoka",
+    title: "EAI VIZINHO, BÃO?",
     game: "Scorn",
     viewers: 10920,
     tags: ["Português"],
@@ -16,6 +19,7 @@ const followedChannels = [
   },
   {
     user: "YoDa",
+    title: "MINECRAFT HOJE MEIO DIA",
     game: "League of Legends",
     viewers: 7467,
     tags: ["Português"],
@@ -24,6 +28,7 @@ const followedChannels = [
   },
   {
     user: "Baiano",
+    title: "BAIANALISTA Prêmio CBLOL 🏆 🔥!cortes",
     game: "League of Legends",
     viewers: 7430,
     tags: ["Português"],
@@ -32,6 +37,7 @@ const followedChannels = [
   },
   {
     user: "frttt",
+    title: "RANKEADAS TRYHARD RUMO AO TOPO - !aulas !lojatl !liquid+",
     game: "VALORANT",
     viewers: 4300,
     tags: ["Português"],
@@ -39,6 +45,8 @@ const followedChannels = [
   },
   {
     user: "Coreano",
+    title:
+      "Rankeads 15s até umas 18:00, depois tiro delay e jogo outra coisa | !youtube !vods !loudclub",
     game: "Overwatch 2",
     viewers: 3405,
     tags: ["Português"],
@@ -47,6 +55,7 @@ const followedChannels = [
   },
   {
     user: "Felps",
+    title: "497ª | clica.",
     game: "Cookie Clicker",
     viewers: 2231,
     tags: ["Português"],
@@ -55,6 +64,7 @@ const followedChannels = [
   },
   {
     user: "TFToddy",
+    title: "#2 BR - 1763 PDLs - BUSCANDO O TOP 1 BR!!!",
     game: "Teamfight Tactics",
     viewers: 1879,
     tags: ["Português"],
@@ -63,6 +73,7 @@ const followedChannels = [
   },
   {
     user: "Prizzaa",
+    title: "VAMO FOFOCAR SIM e irl em tokyo mais tarde",
     game: "Just Chatting",
     viewers: 723,
     tags: ["Português"],
@@ -71,6 +82,7 @@ const followedChannels = [
   },
   {
     user: "nuuhfps",
+    title: "🟢🟢 [Radiante] To jogando mal 🟢🟢 - !Samsung !aimlab !exitlag",
     game: "VALORANT",
     viewers: 643,
     tags: ["Português"],
@@ -79,7 +91,8 @@ const followedChannels = [
   },
   {
     user: "laribasgal",
-    game: "Overwatch 2",
+    title: "QUERO CAFEEEEEEE !zap !regras",
+    game: "VALORANT",
     viewers: 540,
     tags: ["Português"],
     avatar: "/users/laribasgal.png",
@@ -87,6 +100,7 @@ const followedChannels = [
   },
   {
     user: "PatoPapao",
+    title: "sub por pena? 🥺 | !cronograma !pokemon",
     game: "League of Legends",
     viewers: 532,
     tags: ["Português"],
