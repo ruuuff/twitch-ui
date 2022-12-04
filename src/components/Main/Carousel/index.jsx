@@ -102,7 +102,8 @@ function Carousel() {
       ) : (
         <div
           className="flex w-[750px] h-[300px] absolute top-[50%] left-[50%] 
-          shadow-lg transform translate-x-[-50%] translate-y-[-50%] bg-gray-200"
+          shadow-lg transform translate-x-[-50%] translate-y-[-50%] bg-gray-200
+          dark:bg-neutral-800"
         ></div>
       )}
 
