@@ -6,7 +6,8 @@ import OptionsBtn from "./OptionsBtn";
 import { getViewersFormatted } from "../../../utils";
 
 export default function Channel({ channel }) {
-  const { user, game, viewers, title, tags, avatar, color } = channel;
+  const { user, game, viewers, title, tags, avatar, color, imagePreview } =
+    channel;
 
   return (
     <div>
@@ -14,9 +15,16 @@ export default function Channel({ channel }) {
         <div className="bg-black dark:bg-[#222] w-full h-full">
           <LiveTag />
 
+          <img
+            className="h-full w-full object-cover"
+            src={imagePreview || "/assets/404_preview.jpg"}
+            alt="Live Preview"
+          />
+
           <span
             className="absolute bottom-[10px] left-[10px] font-inter px-1
-            text-white text-[13px] bg-livechannel-viewer-count-bg rounded-[4px]"
+            text-white text-[13px] bg-livechannel-viewer-count-bg rounded-[4px]
+            select-none"
           >
             {getViewersFormatted(viewers)} viewers
           </span>
