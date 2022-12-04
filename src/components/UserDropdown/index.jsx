@@ -1,24 +1,10 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { AppContext } from "../../contexts/AppContext";
 import DropdownDivider from "./DropdownDivider";
 import DropdownButton from "./DropdownButton";
 
 function UserDropdown() {
-  const theme = localStorage.getItem("theme");
-  const [darkTheme, setDarkTheme] = useState(theme === "dark");
-
-  function toggleTheme() {
-    const docEl = document.documentElement;
-
-    if (docEl.classList.contains("dark")) {
-      docEl.classList.remove("dark");
-      setDarkTheme(false);
-      localStorage.setItem("theme", "light");
-    } else {
-      docEl.classList.add("dark");
-      setDarkTheme(true);
-      localStorage.setItem("theme", "dark");
-    }
-  }
+  const { isDarkTheme, toggleTheme } = useContext(AppContext);
 
   return (
     <div
@@ -266,7 +252,7 @@ function UserDropdown() {
             className="ml-auto w-[35px] h-[20px] border-[2px] border-toggle-border
             rounded-full relative"
           >
-            {darkTheme && (
+            {isDarkTheme && (
               <div
                 className="w-[6px] h-[10px] transform rotate-45 translate-y-[-50%] absolute
                 border-[2px] border-r-[rgb(169, 112, 255)] border-b-[rgb(169, 112, 255)]
@@ -278,7 +264,7 @@ function UserDropdown() {
               translate-y-[-50%] top-[50%] transition-[left] ease-linear 
               motion-reduce:transition-none"
               style={{
-                left: darkTheme ? "calc(100% - (12px + 2px))" : "2px",
+                left: isDarkTheme ? "calc(100% - (12px + 2px))" : "2px",
               }}
             ></div>
           </div>
