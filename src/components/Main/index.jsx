@@ -3,11 +3,12 @@ import LiveChannels from "./LiveChannels";
 import SectionTitle from "./SectionTitle";
 import Games from "./Games";
 import Categories from "./Categories";
+import Footer from "./Footer";
 
 function MainContent() {
   return (
     <main className="w-full h-full scrollbar overflow-y-scroll px-[30px]">
-      <div className="mx-auto max-w-[2000px] pb-[70px]">
+      <div className="mx-auto max-w-[2000px] pb-[30px]">
         <div className="flex items-center h-[340px] py-[20px]">
           <Carousel />
         </div>
@@ -22,8 +23,12 @@ function MainContent() {
           <Games />
         </div>
 
-        <div>
+        <div className="pb-[20px]">
           <Categories />
+        </div>
+
+        <div>
+          <Footer />
         </div>
       </div>
     </main>
