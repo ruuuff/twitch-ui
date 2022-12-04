@@ -4,7 +4,7 @@ const followedChannels = [
     title:
       "AO VIVO E COM IMAGENS: BRASIL X SUÍÇA | RODADA 2 | FASE DE GRUPOS | COPA DO MUNDO 2022",
     game: "Just Chatting",
-    viewers: 28214,
+    viewers: 294283,
     tags: ["Português"],
     avatar: "/users/casimito.png",
     color: "#C0F500",
@@ -47,7 +47,7 @@ const followedChannels = [
     user: "Coreano",
     title:
       "Rankeads 15s até umas 18:00, depois tiro delay e jogo outra coisa | !youtube !vods !loudclub",
-    game: "Overwatch 2",
+    game: "VALORANT",
     viewers: 3405,
     tags: ["Português"],
     avatar: "/users/Coreano.png",
@@ -81,22 +81,22 @@ const followedChannels = [
     color: "#FAB3FF",
   },
   {
-    user: "nuuhfps",
-    title: "🟢🟢 [Radiante] To jogando mal 🟢🟢 - !Samsung !aimlab !exitlag",
-    game: "VALORANT",
-    viewers: 643,
-    tags: ["Português"],
-    avatar: "/users/nuuhfps.png",
-    color: "#EFF133",
-  },
-  {
     user: "laribasgal",
     title: "QUERO CAFEEEEEEE !zap !regras",
     game: "VALORANT",
-    viewers: 540,
+    viewers: 623,
     tags: ["Português"],
     avatar: "/users/laribasgal.png",
     color: "#F5F064",
+  },
+  {
+    user: "nuuhfps",
+    title: "🟢🟢 [Radiante] To jogando mal 🟢🟢 - !Samsung !aimlab !exitlag",
+    game: "VALORANT",
+    viewers: 561,
+    tags: ["Português"],
+    avatar: "/users/nuuhfps.png",
+    color: "#EFF133",
   },
   {
     user: "PatoPapao",
@@ -158,7 +158,7 @@ const games = [
   {
     name: "Cookie Clicker",
     image: "/assets/cookie-clicker.jpg",
-    viewers: 2340,
+    viewers: 2231,
     tags: ["Point and Click"],
   },
   {
@@ -206,7 +206,7 @@ const games = [
   {
     name: "Sports",
     image: "/assets/sports.jpg",
-    viewers: 146829,
+    viewers: 446829,
     tags: ["IRL"],
   },
   {
