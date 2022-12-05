@@ -3,11 +3,12 @@ import { AppContext } from "../../contexts/AppContext";
 import DropdownDivider from "./DropdownDivider";
 import DropdownButton from "./DropdownButton";
 
-function UserDropdown() {
+function UserDropdown({ dropdownRef }) {
   const { isDarkTheme, toggleTheme } = useContext(AppContext);
 
   return (
     <div
+      ref={dropdownRef}
       className="absolute p-[10px] ml-0 right-0 bg-dropdown-bg-color rounded-md 
       top-[46px] shadow-md w-[204.72px] laptop:w-[201.719px] z-10"
     >
